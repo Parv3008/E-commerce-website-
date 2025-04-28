@@ -8,7 +8,7 @@ import Cart from './components/Cart';
 function App() {
   return (
     <div className="container">
-      <h1>🛒 E-Commerce Product Listing</h1>
+      <h1>E-Commerce Website</h1>
       <FilterBar />
       <SortOptions />
       <div className="main-content">

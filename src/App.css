@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: auto;
   padding: 1rem;
 }
@@ -21,7 +21,6 @@ h1 {
   gap: 1rem;
 }
 
-.filter-bar,
 .sort-options {
   margin-bottom: 1rem;
   display: flex;
@@ -55,6 +54,7 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+
 
 @media (max-width: 768px) {
   .main-content {
