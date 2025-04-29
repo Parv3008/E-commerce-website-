@@ -1,22 +1,31 @@
-import './App.css'
-import React from 'react';
-import FilterBar from './components/FilterBar';
-import SortOptions from './components/SortOptions';
-import ProductList from './components/ProductList';
-import Cart from './components/Cart';
+import React, { useState } from "react";
+import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
+import { CartProvider } from "./context/CartContext";
+import "./App.scss";
 
-function App() {
+const App = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
-    <div className="container">
-      <h1>E-Commerce Website</h1>
-      <FilterBar />
-      <SortOptions />
-      <div className="main-content">
+    <CartProvider>
+      <div className="container">
+        <div className="navbar">
+          <h2 className="logo">TrendyCart</h2>
+          <button className="cart-btn" onClick={() => setIsCartOpen(true)}>
+            Cart
+          </button>
+        </div>
         <ProductList />
-        <Cart />
+        <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
+          <button className="close-btn" onClick={() => setIsCartOpen(false)}>
+            ✖
+          </button>
+          <Cart />
+        </div>
       </div>
-    </div>
+    </CartProvider>
   );
-}
+};
 
 export default App;
